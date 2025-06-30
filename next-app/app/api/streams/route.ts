@@ -7,7 +7,7 @@ const createStreamSchema = z.object({
     url: z.string().min(1, "URL is required")
 })
 
-const YT_REGEX = new RegExp("https://www.youtube.com/watch?v=GhH1QWY6BDc");
+const YT_REGEX = /^https:\/\/(www\.)?youtube\.com\/watch\?v=[\w-]{11}$/;
 
 export const POST = async (req: NextRequest) => {
     try {
