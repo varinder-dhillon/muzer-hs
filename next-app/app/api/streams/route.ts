@@ -9,16 +9,16 @@ const createStreamSchema = z.object({
 
 const YT_REGEX = new RegExp("https://www.youtube.com/watch?v=GhH1QWY6BDc");
 
-export const Post = async (req: NextRequest) => {
+export const POST = async (req: NextRequest) => {
     try {
         const data = createStreamSchema.parse(await req.json());
         const isYT = YT_REGEX.test(data.url);
-        
+        // console.log("req", req)
         if(!isYT){
             return NextResponse.json({
-                message: "Error while adding a stream"
+                message: "Youtube link is not valid"
             }, {
-                status: 411
+                status: 400
             })
         }
 
@@ -41,6 +41,7 @@ export const Post = async (req: NextRequest) => {
         })
 
     } catch (error) {
+            console.log(error)
             return NextResponse.json({
                 message: "Error while adding a stream"
             }, {
