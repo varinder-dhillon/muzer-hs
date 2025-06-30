@@ -24,13 +24,20 @@ export const Post = async (req: NextRequest) => {
 
         const extractedId = data.url.split("?v=")[1];
 
-        await prismaClient.stream.create({
+        const stream = await prismaClient.stream.create({
             data: {
                 userId: data.creatorId,
                 url: data.url,
                 extractedId,
                 type: "Youtube"
             }
+        })
+
+        return NextResponse.json({
+            message: 'Added stream',
+            id: stream.id
+        },{
+            status: 201
         })
 
     } catch (error) {
