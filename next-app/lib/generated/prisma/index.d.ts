@@ -1175,21 +1175,18 @@ export namespace Prisma {
     id: string | null
     email: string | null
     provider: $Enums.Provider | null
-    role: $Enums.Role | null
   }
 
   export type UserMaxAggregateOutputType = {
     id: string | null
     email: string | null
     provider: $Enums.Provider | null
-    role: $Enums.Role | null
   }
 
   export type UserCountAggregateOutputType = {
     id: number
     email: number
     provider: number
-    role: number
     _all: number
   }
 
@@ -1198,21 +1195,18 @@ export namespace Prisma {
     id?: true
     email?: true
     provider?: true
-    role?: true
   }
 
   export type UserMaxAggregateInputType = {
     id?: true
     email?: true
     provider?: true
-    role?: true
   }
 
   export type UserCountAggregateInputType = {
     id?: true
     email?: true
     provider?: true
-    role?: true
     _all?: true
   }
 
@@ -1292,7 +1286,6 @@ export namespace Prisma {
     id: string
     email: string
     provider: $Enums.Provider
-    role: $Enums.Role
     _count: UserCountAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
@@ -1316,7 +1309,6 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     provider?: boolean
-    role?: boolean
     streams?: boolean | User$streamsArgs<ExtArgs>
     upvotes?: boolean | User$upvotesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -1326,24 +1318,21 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     provider?: boolean
-    role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
     provider?: boolean
-    role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     id?: boolean
     email?: boolean
     provider?: boolean
-    role?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "provider" | "role", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "provider", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     streams?: boolean | User$streamsArgs<ExtArgs>
     upvotes?: boolean | User$upvotesArgs<ExtArgs>
@@ -1362,7 +1351,6 @@ export namespace Prisma {
       id: string
       email: string
       provider: $Enums.Provider
-      role: $Enums.Role
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1791,7 +1779,6 @@ export namespace Prisma {
     readonly id: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly provider: FieldRef<"User", 'Provider'>
-    readonly role: FieldRef<"User", 'Role'>
   }
     
 
@@ -2261,6 +2248,9 @@ export namespace Prisma {
     type: $Enums.StreamType | null
     url: string | null
     extractedId: string | null
+    title: string | null
+    smallImg: string | null
+    bigImg: string | null
     active: boolean | null
     userId: string | null
   }
@@ -2270,6 +2260,9 @@ export namespace Prisma {
     type: $Enums.StreamType | null
     url: string | null
     extractedId: string | null
+    title: string | null
+    smallImg: string | null
+    bigImg: string | null
     active: boolean | null
     userId: string | null
   }
@@ -2279,6 +2272,9 @@ export namespace Prisma {
     type: number
     url: number
     extractedId: number
+    title: number
+    smallImg: number
+    bigImg: number
     active: number
     userId: number
     _all: number
@@ -2290,6 +2286,9 @@ export namespace Prisma {
     type?: true
     url?: true
     extractedId?: true
+    title?: true
+    smallImg?: true
+    bigImg?: true
     active?: true
     userId?: true
   }
@@ -2299,6 +2298,9 @@ export namespace Prisma {
     type?: true
     url?: true
     extractedId?: true
+    title?: true
+    smallImg?: true
+    bigImg?: true
     active?: true
     userId?: true
   }
@@ -2308,6 +2310,9 @@ export namespace Prisma {
     type?: true
     url?: true
     extractedId?: true
+    title?: true
+    smallImg?: true
+    bigImg?: true
     active?: true
     userId?: true
     _all?: true
@@ -2390,6 +2395,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title: string
+    smallImg: string
+    bigImg: string
     active: boolean
     userId: string
     _count: StreamCountAggregateOutputType | null
@@ -2416,6 +2424,9 @@ export namespace Prisma {
     type?: boolean
     url?: boolean
     extractedId?: boolean
+    title?: boolean
+    smallImg?: boolean
+    bigImg?: boolean
     active?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2428,6 +2439,9 @@ export namespace Prisma {
     type?: boolean
     url?: boolean
     extractedId?: boolean
+    title?: boolean
+    smallImg?: boolean
+    bigImg?: boolean
     active?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2438,6 +2452,9 @@ export namespace Prisma {
     type?: boolean
     url?: boolean
     extractedId?: boolean
+    title?: boolean
+    smallImg?: boolean
+    bigImg?: boolean
     active?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2448,11 +2465,14 @@ export namespace Prisma {
     type?: boolean
     url?: boolean
     extractedId?: boolean
+    title?: boolean
+    smallImg?: boolean
+    bigImg?: boolean
     active?: boolean
     userId?: boolean
   }
 
-  export type StreamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "url" | "extractedId" | "active" | "userId", ExtArgs["result"]["stream"]>
+  export type StreamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "url" | "extractedId" | "title" | "smallImg" | "bigImg" | "active" | "userId", ExtArgs["result"]["stream"]>
   export type StreamInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     upvotes?: boolean | Stream$upvotesArgs<ExtArgs>
@@ -2476,6 +2496,9 @@ export namespace Prisma {
       type: $Enums.StreamType
       url: string
       extractedId: string
+      title: string
+      smallImg: string
+      bigImg: string
       active: boolean
       userId: string
     }, ExtArgs["result"]["stream"]>
@@ -2907,6 +2930,9 @@ export namespace Prisma {
     readonly type: FieldRef<"Stream", 'StreamType'>
     readonly url: FieldRef<"Stream", 'String'>
     readonly extractedId: FieldRef<"Stream", 'String'>
+    readonly title: FieldRef<"Stream", 'String'>
+    readonly smallImg: FieldRef<"Stream", 'String'>
+    readonly bigImg: FieldRef<"Stream", 'String'>
     readonly active: FieldRef<"Stream", 'Boolean'>
     readonly userId: FieldRef<"Stream", 'String'>
   }
@@ -4404,8 +4430,7 @@ export namespace Prisma {
   export const UserScalarFieldEnum: {
     id: 'id',
     email: 'email',
-    provider: 'provider',
-    role: 'role'
+    provider: 'provider'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -4416,6 +4441,9 @@ export namespace Prisma {
     type: 'type',
     url: 'url',
     extractedId: 'extractedId',
+    title: 'title',
+    smallImg: 'smallImg',
+    bigImg: 'bigImg',
     active: 'active',
     userId: 'userId'
   };
@@ -4482,20 +4510,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Role'
-   */
-  export type EnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role'>
-    
-
-
-  /**
-   * Reference to a field of type 'Role[]'
-   */
-  export type ListEnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role[]'>
-    
-
-
-  /**
    * Reference to a field of type 'StreamType'
    */
   export type EnumStreamTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StreamType'>
@@ -4540,7 +4554,6 @@ export namespace Prisma {
     id?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     provider?: EnumProviderFilter<"User"> | $Enums.Provider
-    role?: EnumRoleFilter<"User"> | $Enums.Role
     streams?: StreamListRelationFilter
     upvotes?: UpvoteListRelationFilter
   }
@@ -4549,28 +4562,25 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     provider?: SortOrder
-    role?: SortOrder
     streams?: StreamOrderByRelationAggregateInput
     upvotes?: UpvoteOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    email?: string
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
-    email?: StringFilter<"User"> | string
     provider?: EnumProviderFilter<"User"> | $Enums.Provider
-    role?: EnumRoleFilter<"User"> | $Enums.Role
     streams?: StreamListRelationFilter
     upvotes?: UpvoteListRelationFilter
-  }, "id">
+  }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
     email?: SortOrder
     provider?: SortOrder
-    role?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
@@ -4583,7 +4593,6 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     provider?: EnumProviderWithAggregatesFilter<"User"> | $Enums.Provider
-    role?: EnumRoleWithAggregatesFilter<"User"> | $Enums.Role
   }
 
   export type StreamWhereInput = {
@@ -4594,6 +4603,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFilter<"Stream"> | $Enums.StreamType
     url?: StringFilter<"Stream"> | string
     extractedId?: StringFilter<"Stream"> | string
+    title?: StringFilter<"Stream"> | string
+    smallImg?: StringFilter<"Stream"> | string
+    bigImg?: StringFilter<"Stream"> | string
     active?: BoolFilter<"Stream"> | boolean
     userId?: StringFilter<"Stream"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -4605,6 +4617,9 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
     active?: SortOrder
     userId?: SortOrder
     user?: UserOrderByWithRelationInput
@@ -4619,6 +4634,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFilter<"Stream"> | $Enums.StreamType
     url?: StringFilter<"Stream"> | string
     extractedId?: StringFilter<"Stream"> | string
+    title?: StringFilter<"Stream"> | string
+    smallImg?: StringFilter<"Stream"> | string
+    bigImg?: StringFilter<"Stream"> | string
     active?: BoolFilter<"Stream"> | boolean
     userId?: StringFilter<"Stream"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -4630,6 +4648,9 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
     active?: SortOrder
     userId?: SortOrder
     _count?: StreamCountOrderByAggregateInput
@@ -4645,6 +4666,9 @@ export namespace Prisma {
     type?: EnumStreamTypeWithAggregatesFilter<"Stream"> | $Enums.StreamType
     url?: StringWithAggregatesFilter<"Stream"> | string
     extractedId?: StringWithAggregatesFilter<"Stream"> | string
+    title?: StringWithAggregatesFilter<"Stream"> | string
+    smallImg?: StringWithAggregatesFilter<"Stream"> | string
+    bigImg?: StringWithAggregatesFilter<"Stream"> | string
     active?: BoolWithAggregatesFilter<"Stream"> | boolean
     userId?: StringWithAggregatesFilter<"Stream"> | string
   }
@@ -4702,7 +4726,6 @@ export namespace Prisma {
     id?: string
     email: string
     provider: $Enums.Provider
-    role: $Enums.Role
     streams?: StreamCreateNestedManyWithoutUserInput
     upvotes?: UpvoteCreateNestedManyWithoutUserInput
   }
@@ -4711,7 +4734,6 @@ export namespace Prisma {
     id?: string
     email: string
     provider: $Enums.Provider
-    role: $Enums.Role
     streams?: StreamUncheckedCreateNestedManyWithoutUserInput
     upvotes?: UpvoteUncheckedCreateNestedManyWithoutUserInput
   }
@@ -4720,7 +4742,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     provider?: EnumProviderFieldUpdateOperationsInput | $Enums.Provider
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     streams?: StreamUpdateManyWithoutUserNestedInput
     upvotes?: UpvoteUpdateManyWithoutUserNestedInput
   }
@@ -4729,7 +4750,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     provider?: EnumProviderFieldUpdateOperationsInput | $Enums.Provider
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     streams?: StreamUncheckedUpdateManyWithoutUserNestedInput
     upvotes?: UpvoteUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -4738,21 +4758,18 @@ export namespace Prisma {
     id?: string
     email: string
     provider: $Enums.Provider
-    role: $Enums.Role
   }
 
   export type UserUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     provider?: EnumProviderFieldUpdateOperationsInput | $Enums.Provider
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
 
   export type UserUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     provider?: EnumProviderFieldUpdateOperationsInput | $Enums.Provider
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
 
   export type StreamCreateInput = {
@@ -4760,6 +4777,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title?: string
+    smallImg?: string
+    bigImg?: string
     active?: boolean
     user: UserCreateNestedOneWithoutStreamsInput
     upvotes?: UpvoteCreateNestedManyWithoutStreamInput
@@ -4770,6 +4790,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title?: string
+    smallImg?: string
+    bigImg?: string
     active?: boolean
     userId: string
     upvotes?: UpvoteUncheckedCreateNestedManyWithoutStreamInput
@@ -4780,6 +4803,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
     user?: UserUpdateOneRequiredWithoutStreamsNestedInput
     upvotes?: UpvoteUpdateManyWithoutStreamNestedInput
@@ -4790,6 +4816,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
     upvotes?: UpvoteUncheckedUpdateManyWithoutStreamNestedInput
@@ -4800,6 +4829,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title?: string
+    smallImg?: string
+    bigImg?: string
     active?: boolean
     userId: string
   }
@@ -4809,6 +4841,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -4817,6 +4852,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
   }
@@ -4883,13 +4921,6 @@ export namespace Prisma {
     not?: NestedEnumProviderFilter<$PrismaModel> | $Enums.Provider
   }
 
-  export type EnumRoleFilter<$PrismaModel = never> = {
-    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
-    not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
-  }
-
   export type StreamListRelationFilter = {
     every?: StreamWhereInput
     some?: StreamWhereInput
@@ -4914,21 +4945,18 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     provider?: SortOrder
-    role?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
     provider?: SortOrder
-    role?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
     provider?: SortOrder
-    role?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -4959,16 +4987,6 @@ export namespace Prisma {
     _max?: NestedEnumProviderFilter<$PrismaModel>
   }
 
-  export type EnumRoleWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
-    not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumRoleFilter<$PrismaModel>
-    _max?: NestedEnumRoleFilter<$PrismaModel>
-  }
-
   export type EnumStreamTypeFilter<$PrismaModel = never> = {
     equals?: $Enums.StreamType | EnumStreamTypeFieldRefInput<$PrismaModel>
     in?: $Enums.StreamType[] | ListEnumStreamTypeFieldRefInput<$PrismaModel>
@@ -4991,6 +5009,9 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
     active?: SortOrder
     userId?: SortOrder
   }
@@ -5000,6 +5021,9 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
     active?: SortOrder
     userId?: SortOrder
   }
@@ -5009,6 +5033,9 @@ export namespace Prisma {
     type?: SortOrder
     url?: SortOrder
     extractedId?: SortOrder
+    title?: SortOrder
+    smallImg?: SortOrder
+    bigImg?: SortOrder
     active?: SortOrder
     userId?: SortOrder
   }
@@ -5093,10 +5120,6 @@ export namespace Prisma {
 
   export type EnumProviderFieldUpdateOperationsInput = {
     set?: $Enums.Provider
-  }
-
-  export type EnumRoleFieldUpdateOperationsInput = {
-    set?: $Enums.Role
   }
 
   export type StreamUpdateManyWithoutUserNestedInput = {
@@ -5268,13 +5291,6 @@ export namespace Prisma {
     not?: NestedEnumProviderFilter<$PrismaModel> | $Enums.Provider
   }
 
-  export type NestedEnumRoleFilter<$PrismaModel = never> = {
-    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
-    not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
-  }
-
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -5313,16 +5329,6 @@ export namespace Prisma {
     _max?: NestedEnumProviderFilter<$PrismaModel>
   }
 
-  export type NestedEnumRoleWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
-    not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumRoleFilter<$PrismaModel>
-    _max?: NestedEnumRoleFilter<$PrismaModel>
-  }
-
   export type NestedEnumStreamTypeFilter<$PrismaModel = never> = {
     equals?: $Enums.StreamType | EnumStreamTypeFieldRefInput<$PrismaModel>
     in?: $Enums.StreamType[] | ListEnumStreamTypeFieldRefInput<$PrismaModel>
@@ -5358,6 +5364,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title?: string
+    smallImg?: string
+    bigImg?: string
     active?: boolean
     upvotes?: UpvoteCreateNestedManyWithoutStreamInput
   }
@@ -5367,6 +5376,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title?: string
+    smallImg?: string
+    bigImg?: string
     active?: boolean
     upvotes?: UpvoteUncheckedCreateNestedManyWithoutStreamInput
   }
@@ -5425,6 +5437,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFilter<"Stream"> | $Enums.StreamType
     url?: StringFilter<"Stream"> | string
     extractedId?: StringFilter<"Stream"> | string
+    title?: StringFilter<"Stream"> | string
+    smallImg?: StringFilter<"Stream"> | string
+    bigImg?: StringFilter<"Stream"> | string
     active?: BoolFilter<"Stream"> | boolean
     userId?: StringFilter<"Stream"> | string
   }
@@ -5458,7 +5473,6 @@ export namespace Prisma {
     id?: string
     email: string
     provider: $Enums.Provider
-    role: $Enums.Role
     upvotes?: UpvoteCreateNestedManyWithoutUserInput
   }
 
@@ -5466,7 +5480,6 @@ export namespace Prisma {
     id?: string
     email: string
     provider: $Enums.Provider
-    role: $Enums.Role
     upvotes?: UpvoteUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -5510,7 +5523,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     provider?: EnumProviderFieldUpdateOperationsInput | $Enums.Provider
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     upvotes?: UpvoteUpdateManyWithoutUserNestedInput
   }
 
@@ -5518,7 +5530,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     provider?: EnumProviderFieldUpdateOperationsInput | $Enums.Provider
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     upvotes?: UpvoteUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -5542,7 +5553,6 @@ export namespace Prisma {
     id?: string
     email: string
     provider: $Enums.Provider
-    role: $Enums.Role
     streams?: StreamCreateNestedManyWithoutUserInput
   }
 
@@ -5550,7 +5560,6 @@ export namespace Prisma {
     id?: string
     email: string
     provider: $Enums.Provider
-    role: $Enums.Role
     streams?: StreamUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -5564,6 +5573,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title?: string
+    smallImg?: string
+    bigImg?: string
     active?: boolean
     user: UserCreateNestedOneWithoutStreamsInput
   }
@@ -5573,6 +5585,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title?: string
+    smallImg?: string
+    bigImg?: string
     active?: boolean
     userId: string
   }
@@ -5597,7 +5612,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     provider?: EnumProviderFieldUpdateOperationsInput | $Enums.Provider
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     streams?: StreamUpdateManyWithoutUserNestedInput
   }
 
@@ -5605,7 +5619,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     provider?: EnumProviderFieldUpdateOperationsInput | $Enums.Provider
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     streams?: StreamUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -5625,6 +5638,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
     user?: UserUpdateOneRequiredWithoutStreamsNestedInput
   }
@@ -5634,6 +5650,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
   }
@@ -5643,6 +5662,9 @@ export namespace Prisma {
     type: $Enums.StreamType
     url: string
     extractedId: string
+    title?: string
+    smallImg?: string
+    bigImg?: string
     active?: boolean
   }
 
@@ -5656,6 +5678,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
     upvotes?: UpvoteUpdateManyWithoutStreamNestedInput
   }
@@ -5665,6 +5690,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
     upvotes?: UpvoteUncheckedUpdateManyWithoutStreamNestedInput
   }
@@ -5674,6 +5702,9 @@ export namespace Prisma {
     type?: EnumStreamTypeFieldUpdateOperationsInput | $Enums.StreamType
     url?: StringFieldUpdateOperationsInput | string
     extractedId?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    smallImg?: StringFieldUpdateOperationsInput | string
+    bigImg?: StringFieldUpdateOperationsInput | string
     active?: BoolFieldUpdateOperationsInput | boolean
   }
 

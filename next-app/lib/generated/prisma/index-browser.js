@@ -123,8 +123,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  provider: 'provider',
-  role: 'role'
+  provider: 'provider'
 };
 
 exports.Prisma.StreamScalarFieldEnum = {
@@ -132,6 +131,9 @@ exports.Prisma.StreamScalarFieldEnum = {
   type: 'type',
   url: 'url',
   extractedId: 'extractedId',
+  title: 'title',
+  smallImg: 'smallImg',
+  bigImg: 'bigImg',
   active: 'active',
   userId: 'userId'
 };
@@ -153,11 +155,6 @@ exports.Prisma.QueryMode = {
 };
 exports.Provider = exports.$Enums.Provider = {
   Google: 'Google'
-};
-
-exports.Role = exports.$Enums.Role = {
-  Streamer: 'Streamer',
-  EndUser: 'EndUser'
 };
 
 exports.StreamType = exports.$Enums.StreamType = {
